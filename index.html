@@ -24,13 +24,13 @@
     var buildUrl = ""; // Correct, since your base path is the CDN URL
 
     // FIX 1: Must include the TemplateData folder. The <base> tag handles the CDN URL part.
-    var loaderUrl = "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@refs/heads/main/TemplateData/WebGL.loader.js"; 
+    var loaderUrl = "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@main/TemplateData/WebGL.loader.js"; 
     
     var config = {
         // FIX 2-4: Must include the TemplateData folder for all core assets.
-        dataUrl: "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@refs/heads/main/TemplateData/WebGL.data",
-        frameworkUrl: "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@refs/heads/main/TemplateData/WebGL.framework.js",
-        codeUrl: "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@refs/heads/main/TemplateData/WebGL.wasm",
+        dataUrl: "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@main/TemplateData/WebGL.data",
+        frameworkUrl: "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@main/TemplateData/WebGL.framework.js",
+        codeUrl: "https://cdn.jsdelivr.net/gh/gamebackup/tscpr@main/TemplateData/WebGL.wasm",
         
         // This streamingAssetsUrl is likely fine as it is at the root of your repo, 
         // but if it's inside TemplateData, you'd need to change it.
