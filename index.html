@@ -20,16 +20,22 @@
         WebGL builds are not supported on mobile devices.
       </div>
     </div>
-    <script>
-    var buildUrl = "";
-    // FIX 1: Add TemplateData to the loader script path
-    var loaderUrl = "/WebGL.loader.js"; 
+<script>
+    var buildUrl = ""; // Correct, since your base path is the CDN URL
+
+    // FIX 1: Must include the TemplateData folder. The <base> tag handles the CDN URL part.
+    var loaderUrl = "TemplateData/WebGL.loader.js"; 
+    
     var config = {
-        // FIX 2-4: Add TemplateData to the config URLs
-        dataUrl: buildUrl + "/WebGL.data",
-        frameworkUrl: buildUrl + "/WebGL.framework.js",
-        codeUrl: buildUrl + "/WebGL.wasm",
+        // FIX 2-4: Must include the TemplateData folder for all core assets.
+        dataUrl: "TemplateData/WebGL.data",
+        frameworkUrl: "TemplateData/WebGL.framework.js",
+        codeUrl: "TemplateData/WebGL.wasm",
+        
+        // This streamingAssetsUrl is likely fine as it is at the root of your repo, 
+        // but if it's inside TemplateData, you'd need to change it.
         streamingAssetsUrl: "StreamingAssets",
+        
         companyName: "Raw Fury",
         productName: "Townscaper",
         productVersion: "0.23",
@@ -61,8 +67,9 @@
         //canvas.style.width = "100%";
         //canvas.style.height = "100%";
     }
-    // FIX 5: Add TemplateData to the background image path
-    canvas.style.background = "url('" + buildUrl + "/TemplateData/WebGL.jpg') center / cover";
+    
+    // FIX 5: Must include the TemplateData folder.
+    canvas.style.background = "url('TemplateData/WebGL.jpg') center / cover";
     loadingBar.style.display = "block";
 
     var script = document.createElement("script"); 
@@ -77,6 +84,6 @@
         });
     };
     document.body.appendChild(script);
-    </script>
+</script>
   </body>
 </html>
